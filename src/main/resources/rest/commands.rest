@@ -1,0 +1,95 @@
+### REQ-01
+POST http://localhost:8080/flight/api/uploadCSV
+Accepts: "text/csv; charset=utf-8"
+Content-disposition: "attachment; filename=flight_status_feed.csv"
+src/main/resources/flight_status_feed.csv
+Content-Type: "application/json"
+
+{
+    "status": "Success",
+    "message": "CSV File upload successful",
+    "data": [
+        {
+            "flightId": "EA526",
+            "airlines": "Emirates",
+            "flightDesc": "Emirates Flight from Dubai to London",
+            "updatedTimestamp": "2022-11-28T09:30:00+01:00"
+        },
+        {
+            "flightId": "AF1023",
+            "airlines": "Air France",
+            "flightDesc": "Air France flight from Paris to Manchester",
+            "updatedTimestamp": "2022-11-02T02:30:00+01:30"
+        }
+    ]
+}
+
+### REQ-02 GET All
+GET http://localhost:8080/flight/api/status
+Content-Type: application/json
+
+{
+    "status": "Success",
+    "message": "Flight Status results count 7",
+    "data": [
+        {
+            "flightId": "EA526",
+            "airlines": "Emirates",
+            "flightDesc": "Emirates Flight from Dubai to London",
+            "updatedTimestamp": "2022-11-28T09:30:00+01:00"
+        },
+        {
+            "flightId": "AF1023",
+            "airlines": "Air France",
+            "flightDesc": "Air France flight from Paris to Manchester",
+            "updatedTimestamp": "2022-11-02T02:00:00+01:00"
+        }
+    ]
+}
+
+### REQ-02 GET By ID
+GET http://localhost:8080/flight/api/status?id=EA526
+Content-Type: application/json
+{
+    "status": "Success",
+    "message": "Flight Status found with id [EA526]",
+    "data": {
+        "flightId": "EA526",
+        "airlines": "Emirates",
+        "flightDesc": "Emirates Flight from Dubai to London",
+        "updatedTimestamp": "2022-11-28T09:30:00+01:00"
+    }
+}
+
+### REQ-02 GET by ID NOT FOUND
+GET http://localhost:8080/flight/api/status?id=XYZ123
+Content-Type: application/json
+HTTP STATUS 404 NOT FOUND
+
+{
+    "status": "Failed",
+    "message": "Flight Status was not found with id [XYZ123]",
+    "data": null
+}
+
+
+### REQ-03
+DELETE localhost:8080/flight/api/status/remove?id=EA526
+Content-Type: application/json
+
+{
+    "status": "Success",
+    "message": "Flight Status deleted with id [EA526]",
+    "data": null
+}
+
+### REQ-03
+DELETE http://localhost:8080/flight/api/remove?id=XYZ123
+Content-Type: application/json
+HTTP STATUS 404 NOT FOUND
+
+{
+    "status": "Failed",
+    "message": "Flight Status was not found with id [XYZ123]",
+    "data": null
+}

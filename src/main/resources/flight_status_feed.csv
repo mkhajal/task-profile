@@ -1,0 +1,12 @@
+﻿FLIGHT_ID,AIRLINES,FLIGHT_DESCRIPTION,LAST_REFRESHED_TIMESTAMP
+EA526,Emirates,Emirates Flight from Dubai to London,2022-11-28T09:30:00+01:00
+LH1620,Lufthansa,Lufthansa Flight from Munich to Krakow,2022-11-27T00:15:00+01:00
+EZY8982,easyJet,EasyJet flight from Lisbon to Madrid,2022-10-03T23:30:00+01:00
+BA948,British Airways,British Airways flight from Liverpool to Frankfurt,2022-11-29T14:50:00+01:00
+KL1002,KLM,KLM flight from Amsterdam to Berlin,2022-11-28T13:45:00+01:00
+BR5118,Brussels Airlines,Brussels airlines flight from Brussels to Vienna,2022-11-25T17:30+01:00
+AF1023,Air France,Air France flight from Paris to Manchester,2022-11-02T02:30:00+01:30
+EW7171,Eurowings,Eurowings flight from Prague to Warsaw,20221108T0830
+AE9062,Air Europa,Air Europa flight from Naples to Valencia,20221110T0830
+FR8955,Ryanair,Ryanair flight from Stockholm to Zurich,202211218T0830
+SWR2200,Swiss,Swiss flight from Rotterdam to Geneva,20221128T0830
